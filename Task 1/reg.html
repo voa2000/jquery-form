@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/mystyle.css">
+    </head>
+    <body>
+      <h1>Registration Form</h1>
+      <div class='register'>
+          <form method="POST" id='register' action="">
+              <h2>Register Here</h2>
+              <label>First Name: </label><br/>
+              <input type="text" name="fname" id='name' placeholder="Enter first name"><br /><br>
+            <label>Last Name: </label><br />
+            <input type="text" name="lname" id='name' placeholder="Enter last name"><br><br>
+            <label>Mobile Number: </label><br />
+            <select id='ph'>
+                <option>+44</option>
+                <option>+233</option>
+            </select>
+            <input type="number" name="mobile" id='num' placeholder="Enter mobile"><br /><br>
+            <label>Email: </label><br />
+            <input type="email" name="email" id='name' placeholder="Enter email"><br /><br>
+            <label>Password: </label><br />
+            <input type="password" name="pass" id='name' placeholder="Enter password"><br /><br>
+             <label>Repeat Password: </label><br />
+            <input type="password" name="pass" id='name' placeholder="Repeat password"><br /><br>
+            <input type="radio" name='gender' id='male'>&nbsp;Male<span id='male'>&nbsp;&nbsp;</span>
+            <input type="radio" name='gender' id='female'>&nbsp;Female<span id='female'>&nbsp;&nbsp;</span>
+            <input type="radio" name='gender' id='other'>&nbsp;Other<span id='other'>&nbsp;&nbsp;&nbsp;</span><br /><br>
+            <input type ='submit' value='Submit' id='submit'>
+          </form>
+      </div>
+        
+    </body>
+</html>
