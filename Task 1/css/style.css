@@ -1,46 +1,74 @@
 /*Add CSS below */
-html {
-  box-sizing: inherit;
-  font-size: 20px;
-  line-height: 1.6;
+* {
+    box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #878787;
-}
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  padding: 0;
-  margin: 0.2rem;
-}
-body {
-  max-width: 1000px;
-  margin: 2rem, auto;
-  width: 90%;
-}
-
-h2 {
-  text-align: center;
-  color: black;
-  padding-bottom: 1rem;
 }
 .row {
   display: flex;
-}
-.form-group {
-  flex-basis: 100%;
-  flex-direction: row;
+  flex-direction: column;
+  background: rgb(255, 60, 0);
+  width: 450px;
+  margin: 1px 0px 5px 10px;
+  color: white;
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 10px;
   flex: 1;
 }
-.form-group label,
-.form-group text,
-.form-group select {
-  padding: 2rem;
-  font-size: 1rem;
+h2 {
+  text-align: center;
+    padding: 1rem;
+
 }
-.form-group text,
-.form-group input,
-.form-group textarea {
-  flex-basis: 100%;
+label {
+  color: rgb(245, 240, 240);
+  font-size: 18px;
+  font-style: italic;
+}
+.form-group {
+  padding: 1rem;
+}
+
+#surname,
+#email,
+#name,
+#dob,
+#description,
+#language {
+  width: 350px;
+  border: none;
+  border-radius: 3px;
+  outline: 0;
+  padding: 0.5rem;
+}
+.gender {
+  color: black;
+}
+#submit, #reset {
+  width: 100px;
+  padding: 7px;
+  margin-left: 45px;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  border: none;
+  border-radius: 3px;
+  outline: 7px;
+  text-align: center;
+  align-content: center;
+
+@media (max-width: 500px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/*Table styles*/
+
+table{
+color: #000;
 }

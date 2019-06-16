@@ -1,81 +1,100 @@
 <html>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <title>Form</title>
   </head>
+
   <body>
     <h2>HTML Form</h2>
     <form action="#" method="post">
       <div class="row">
         <div class="form-group">
-          <label for="name">Name</label>
+          <label for="name">First name</label>
           <input type="text" id="name" value="" />
         </div>
         <div class="form-group">
           <label for="surname">Surname</label>
           <input type="text" id="surname" value="" />
         </div>
-      </div>
 
-      <div class="row">
         <div class="form-group">
           <label for="email">E-mail address</label>
-          <input type="email" id="email" value="" />
+          <input type="email" id="email" value="" pattern="[^ @]*@[^ @]*" />
         </div>
         <div class="form-group">
           <label for="dob">Date of birth</label>
           <input type="date" id="dob" value="" />
         </div>
-      </div>
-
-      <div class="row">
         <div class="form-group">
           <label for="description">Description</label>
           <textarea
+            maxlength="250"
             id="description"
             rows="5"
             cols="50"
             placeholder="Describe yourself here..."
           ></textarea>
+          <div id="textarea_feedback"></div>
         </div>
-      </div>
-
-      <div class="row">
         <div class="form-group">
-          Gender
-          <label><input type="radio" name="gender" value="Male" />Male</label>
+          Gender<br />
           <label
-            ><input type="radio" name="gender" value="Female" />Female</label
+            ><input type="radio" name="gender" value="Male" />&nbsp;Male</label
           >
           <label
-            ><input
+            >&nbsp;&nbsp;&nbsp;<input
+              type="radio"
+              name="gender"
+              value="Female"
+            />&nbsp;Female</label
+          >
+          <label
+            >&nbsp;&nbsp;&nbsp;<input
               type="radio"
               name="gender"
               value="Prefer not to say"
-            />Prefer not to say</label>
-		</div>
-	</div>
-
-<div class="row">
-	<div class="form-group">
-		<label for="language">What do you prefer?</label>
-		<select id="language">
-			<option value="html">HTML</option>
-			<option value="javascript">Javascript</option>
-			<option value="css">CSS</option>
-		</select>
-	</div>
-</div>
-
-        <div class="row">
-          <div class="form-group">
-			<button>Submit</button>
-			<button>Reset</button>
-			
-          </div>
+            />&nbsp;Prefer not to say</label
+          >
         </div>
-     
+        <div class="form-group">
+          <label for="language">What do you prefer?</label>
+          <select id="language">
+            <option value="html">HTML</option>
+            <option value="javascript">Javascript</option>
+            <option value="css">CSS</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="reset" value="Reset" id="reset" />
+          <input type="submit" value="Submit" id="submit" />
+        </div>
       </div>
     </form>
+    <script>
+      $(document).ready(function() {
+        var text_max = 250;
+        $("#textarea_feedback").html(text_max + " characters remaining");
+
+        $("#description").keyup(function() {
+          var text_length = $("#description").val().length;
+          var text_remaining = text_max - text_length;
+
+          $("#textarea_feedback").html(
+            text_remaining + " characters remaining"
+          );
+        });
+      });
+
+      InvalidInputHelper(document.getElementById("email"), {
+        defaultText: "Please enter an email address!",
+
+        emptyText: "Please enter an email address!",
+
+        invalidText: function(input) {
+          return 'The email address "' + input.value + '" is invalid!';
+        }
+      });
+    </script>
   </body>
 </html>
