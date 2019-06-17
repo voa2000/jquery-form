@@ -31,7 +31,6 @@ section:nth-of-type(2) {
 
 main {
   grid-area: table;
-  background-color: brown;
 }
 @media only;
 .icons {
@@ -113,4 +112,17 @@ img {
   .topnav input[type="text"] {
     border: 1px solid #ccc;
   }
+}
+/*Table style*/
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
