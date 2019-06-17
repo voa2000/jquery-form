@@ -7,22 +7,26 @@ body {
   margin: 0;
   display: grid;
   grid-template-columns: 10% 40% 20% 20%;
-  grid-template-rows: 10% 45% 45%;
+  grid-template-rows: 6% 6% auto auto;
   grid-template-areas:
-    "sidebar header header header"
+    "sidebar header1 header1 header1"
+    "sidebar header2 header2 header2"
     "sidebar sect1 sect2 sect2"
     "sidebar table table table";
 }
 aside {
   grid-area: sidebar;
 }
-header {
-  grid-area: header;
+header:nth-of-type(1) {
+  grid-area: header1;
+  background-color: green;
+}
+header:nth-of-type(2) {
+  grid-area: header2;
   background-color: green;
 }
 section:nth-of-type(1) {
   grid-area: sect1;
-  background-color: green;
 }
 section:nth-of-type(2) {
   grid-area: sect2;
@@ -125,4 +129,48 @@ th {
   border-bottom: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+}
+/*Style for tab section*/
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.tabitems {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3px;
+}
+.tabitem {
+  flex: 1;
 }
